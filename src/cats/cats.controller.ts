@@ -1,4 +1,5 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Controller, Get, Post, HttpCode } from '@nestjs/common';
+
 
 @Controller('cats')
 export class CatsController {
@@ -7,9 +8,9 @@ export class CatsController {
     return 'This action adds a new cat';
   }
 
-  @Get()
+  @Get('ab*cd')
   findAll(): string {
-    return 'This action returns all cats';
+    return 'This route uses a wildcard';
   }
 }
 
